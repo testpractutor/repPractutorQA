@@ -8,14 +8,17 @@ import org.openqa.selenium.support.PageFactory;
 public class Login_WebE
 {
 
-	@FindBy(id = "txtusername")
-	public WebElement	userName;
+	@FindBy(id = "btnSignIn")
+	public WebElement	btn_SignIn;
+	
+	@FindBy(id = "userName2")
+	public WebElement	txt_userName;
 
-	@FindBy(id = "txtuserpassword")
-	public WebElement	passWord;
+	@FindBy(id = "password2")
+	public WebElement	txt_passWord;
 
-	@FindBy(id = "loginbutton")
-	public WebElement	btnLogin;
+	@FindBy(id = "loginButton")
+	public WebElement	btn_Go;
 
 	@FindBy(id = "userMenu")
 	public WebElement	btn_Salutation;
