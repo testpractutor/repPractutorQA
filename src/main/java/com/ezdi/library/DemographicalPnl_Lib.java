@@ -2,7 +2,7 @@ package com.ezdi.library;
 
 import org.openqa.selenium.WebDriver;
 
-import com.ezdi.framework.common.JDBCSQLLite;
+
 import com.ezdi.webelements.AddUser_WebE;
 import com.ezdi.webelements.DemographicPnl_WebE;
 
