@@ -33,48 +33,38 @@ public class Login_Lib
 			driver = ExecutionSetup.getDriver();
 			login_webe = Login_WebE.getInstance(driver);
 			landingp_webe = LandingP_WebE.getInstance(driver);
-			//			wait = new WebDriverWait(driver, 40);
 
-			//		wait.until(ExpectedConditions.visibilityOf(login_webe.btnLogin));
-			login_webe.userName.sendKeys(userName);
-			login_webe.passWord.sendKeys(passWord);
-			login_webe.btnLogin.click();
+			
+			login_webe.btn_SignIn.click();
+			login_webe.txt_userName.sendKeys(userName);
+			
+			login_webe.txt_passWord.sendKeys(passWord);
+			login_webe.btn_Go.click();
+			
 
-			//Assert.assertTrue((landingp_webe.lbl_UserName.getText()).toLowerCase().contains((userName.toLowerCase())));
+//			if (landingp_webe.lbl_UserName != null)
+//			{
+//				Log4J.logp.info("Login is sucessfull in Login library");
+//				return true;
+//			}
+//			else
+//			{
+//				Log4J.logp.error("Login is un - sucessfull in Login library");
+//				return false;
+//			}
 
-			/*boolean bUsername = Common_Lib.checkElementPresent(landingp_webe.lbl_UserName);
-			if (bUsername == true)
-			{
-				Assert.assertTrue(true, "Login is Successfully.");
-				Log4J.logp.info(landingp_webe.lbl_UserName.getText() + " Welcome to ezcac");
-				Log4J.logp.info("Login is Successfully-- Script Passed");
-				Log4J.logp.info(userName + " User logged in Sucessfully.");
-			}
-			else
-			{
-				Assert.assertTrue(false, "User not Logged In.");
-				Log4J.logp.info(userName + " Is not added.");
-			}
-			*/
-			if (landingp_webe.lbl_UserName != null)
-			{
-				Log4J.logp.info("Login is sucessfull in Login library");
-				return true;
-			}
-			else
-			{
-				Log4J.logp.error("Login is un - sucessfull in Login library");
-				return false;
-			}
-
-			// landingp_webe.imgAdmin_Setting.isDisplayed();
+			
 
 		}
+		
+		
+		
 		catch (Exception e)
 		{
 			Log4J.logf.error("Login is unsucessfully");
 			return false;
 		}
+		return true;
 
 	}
 
