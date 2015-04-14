@@ -67,13 +67,12 @@ public class Student {
 	}
 	
 	@Test(description = " ezCAC_MVP_Reg-2556: Vefity student login",  priority = 1)
-	public static void loginStudent()
+	public static void loginAsStudent()
 	
 	{
 		boolean bstatus; 
 		String strLogin_Rowid = "bc001"  ;
-		//Login_Lib.logIn_App("bonnie", "123");
-		bstatus = Login_Lib.login(strLogin_Rowid);
+				bstatus = Login_Lib.login(strLogin_Rowid);
 		if (bstatus){
 			Log4J.logp.info("login sucessfully for row id " + strLogin_Rowid );
 		} else{
@@ -118,7 +117,7 @@ public class Student {
 			}
 
 			Login_Lib.logOut_App();
-			Login_Lib.logIn_App(DriverTestNG.username, DriverTestNG.password);
+//			Login_Lib.logIn_App(DriverTestNG.username, DriverTestNG.password);
 
 			Log4J.logp.info("In AfterClass for ViewCase");
 

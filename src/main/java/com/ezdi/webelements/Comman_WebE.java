@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Comman_WebE
 {
-
+		
 	/** to click on scroll dragger bar */
 	@FindBy(className = "mCSB_dragger_bar")
 	public WebElement		dragger;
@@ -22,7 +22,7 @@ public class Comman_WebE
 	//@FindBy(css = "span[class='sec-sys']")
 	@FindBy(xpath = "//span[contains(@class,'sec-sys')]")
 	public List<WebElement>	lnk_sys_evidence;
-
+	
 	/** to view highlighted evidence on medical document and coding panel */
 	//@FindBy(css = "span[class='sec-manual']")
 	@FindBy(xpath = "//span[contains(@class,'sec-manual')]")
