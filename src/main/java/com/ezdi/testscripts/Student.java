@@ -66,7 +66,7 @@ public class Student {
 
 	}
 	
-	@Test(description = " ezCAC_MVP_Reg-2556: Vefity student login",  priority = 1)
+	@Test(description = "Vefity student login",  priority = 1)
 	public static void loginAsStudent()
 	
 	{
@@ -82,6 +82,7 @@ public class Student {
 	
 	}
 	
+		
 	@AfterClass
 	public static void ViewCaseAfterClass()
 	{
