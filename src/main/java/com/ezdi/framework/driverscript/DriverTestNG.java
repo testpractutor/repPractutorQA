@@ -55,7 +55,7 @@ public class DriverTestNG
 		strqabuild = selectedConfig.getValuebyParamName("productconfig", "QA Build");
 		strVersion = selectedConfig.getValuebyParamName("productconfig", "Version");
 		strBrowser = selectedConfig.getValuebyParamName("productconfig", "Browser");
-		predata = selectedConfig.getValuebyParamName("productconfig", "Prepare Data");
+		predata = selectedConfig.getValuebyParamName("productconfig", "PreData Flag");
 		mailTo = selectedConfig.getValuebyParamName("productconfig", "mailto");
 
 		Log4J.loadLogger();
@@ -94,6 +94,9 @@ public class DriverTestNG
 			classes.add(testBeforeAfter);
 			ArrayList<String> arr_Modules = new ArrayList<String>();
 			XmlClass testClass = null;
+			
+			
+			
 
 			for (int i = 0; i < listModule.size(); i++)
 			{

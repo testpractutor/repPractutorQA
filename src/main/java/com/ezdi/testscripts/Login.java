@@ -1,4 +1,4 @@
-package com.ezdi.testscripts;
+/*package com.ezdi.testscripts;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -47,9 +47,9 @@ public class Login
 	@BeforeClass
 	public static void loginBeforeTest()
 	{
-		/*String username;
+		String username;
 		String password;
-		Map<String, String> rowTestData = null;*/
+		Map<String, String> rowTestData = null;
 		try
 		{
 			driver = ExecutionSetup.getDriver();
@@ -62,7 +62,7 @@ public class Login
 			reports_webe = Reports_WebE.getInstance(driver);
 			groupingpnl_webe = GroupinPnl_WebE.getInstance(driver);
 
-			/*
+			
 						Login_Lib.logOut_App();
 						JDBCMySql getLoginData = new JDBCMySql();
 
@@ -71,7 +71,7 @@ public class Login
 						username = rowTestData.get("userName");
 						password = rowTestData.get("passWord");
 
-						Login_Lib.logIn_App(username, password);*/
+						Login_Lib.logIn_App(username, password);
 			Login_Lib.login("ag007");
 		}
 		catch (Exception e)
@@ -82,13 +82,13 @@ public class Login
 
 	}
 
-	/**
+	*//**
 	 * This method is to verify successful and unsuccessful login
 	 * 
 	 * @author nchourasiya
 	 *
 	 * @since 17/10/2014
-	 * */
+	 * *//*
 
 	@Test(description = "ezCAC_MVP_Reg-3:To verify successful and unsuccessful login activity ", priority = 1)
 	public static void verifySuccessfulUnsucessfulLogin()
@@ -216,12 +216,12 @@ public class Login
 
 	}
 
-	/**
+	*//**
 	 * This method is to check application behavior with browser's Back/Forward button
 	 * 
 	 * @author nchourasiya
 	 * @since 21/10/2014
-	 * */
+	 * *//*
 
 	@Test(description = "ezCAC_MVP_Reg-17:To verify application behavior with browser's Back/Forward button with login/logout", priority = 2)
 	public static void verfiyApplicationBehaveOnBackOrFwdButton()
@@ -359,14 +359,14 @@ public class Login
 
 	}
 
-	/**
+	*//**
 	 * This method is to check that user can not change password with invalid password
 	 * 
 	 * @author nchourasiya
 	 *
 	 * @since 21/10/2014
 	 * 
-	 * */
+	 * *//*
 
 	@Test(description = "ezCAC_MVP_Reg-2988:To check user can not able to change password with enters passowrd in Invalid format", priority = 3)
 	public static void userCanChangePwd()
@@ -404,14 +404,14 @@ public class Login
 
 	}
 
-	/**
+	*//**
 	 * This menthod is to check that User Should be Locked For 10 min after 3 un sucessful login
 	 * 
 	 * @author nchourasiya
 	 * 
 	 * @since 22/10/2014
 	 * 
-	 * */
+	 * *//*
 
 	@Test(description = "ezCAC_MVP_Reg-27:To verify more than 3 unsuccessful login attempts", priority = 4)
 	public static void threeUnsucessfulLoginAttempts()
@@ -524,14 +524,14 @@ public class Login
 
 	}
 
-	/**
+	*//**
 	 * This method is to check behaviour when user enter invalid email id in forgot password
 	 * 
 	 * @author nchourasiya
 	 * 
 	 * @since 22/10/2014
 	 * 
-	 * */
+	 * *//*
 
 	@Test(description = "ezCAC_MVP_Reg-30:User try to enter an invalid email id into Forgot Password", priority = 5)
 	public static void invalidEmailIdInForgotPassword()
@@ -586,14 +586,14 @@ public class Login
 
 	}
 
-	/**
+	*//**
 	 * This method is to check behaviour when user enter unregistered valid email id in forgot password
 	 * 
 	 * @author nchourasiya
 	 *
 	 * @since 22/10/2014
 	 * 
-	 * */
+	 * *//*
 	@Test(description = "ezCAC_MVP_Reg-31:User enters an unregistered valid email id into forgot password", priority = 6)
 	public static void unregisteredEmailIdInForgotPassword()
 	{
@@ -647,7 +647,7 @@ public class Login
 
 	}
 
-	/**
+	*//**
 	 * 
 	 * This method is to verify that deleted user can not able to access the system
 	 * 
@@ -656,7 +656,7 @@ public class Login
 	 *
 	 * @since 22/10/2014
 	 * 
-	 * */
+	 * *//*
 	@Test(description = "ezCAC_MVP_Reg-42:To verify deleted user can not able to access the system", priority = 7)
 	public static void deletedUserCanNotAccessSystem()
 	{
@@ -717,12 +717,12 @@ public class Login
 
 	}
 
-	/**
+	*//**
 	 * This method is to verify login and logout activity for newly created user
 	 * 
 	 * @author nchourasiya
 	 * @since 11/12/2014
-	 * */
+	 * *//*
 
 	@Test(description = "ezCAC_MVP_Reg-1:Verify that new user can able to login & logout successfully", priority = 8)
 	public static void login_LogoutForNewUser()
@@ -886,12 +886,12 @@ public class Login
 		}
 	}
 
-	/**
+	*//**
 	 * This method is check that user can able to see his/her own profile
 	 * 
 	 * @author agupta
 	 * @since 22/12/2014
-	 */
+	 *//*
 	@Test(description = "ezCAC_MVP_Reg-3048 - User should be able to see his/her own profile" + "ezCAC_MVP_Reg-3050 - To check Accessabliity of PRofile from Different Pages" + "ezCAC_MVP_Reg-3052 - User should be able to make changes in her/his own profile", priority = 9)
 	public static void viewProfile()
 	{
@@ -1005,12 +1005,12 @@ public class Login
 		}
 	}
 
-	/**
+	*//**
 	 * This method is check that user can able to change the password from profile page
 	 * 
 	 * @author agupta
 	 * @since 22/12/2014
-	 */
+	 *//*
 	@Test(description = "ezCAC_MVP_Reg-24:User can able to change password", priority = 10)
 	public static void changePassword()
 	{
@@ -1061,12 +1061,12 @@ public class Login
 		}
 	}
 
-	/**
+	*//**
 	 * This script check that User should be able to edit in her/his own profile picture
 	 * 
 	 * @author agupta
 	 * @since 23/12/2014
-	 */
+	 *//*
 	@Test(description = "ezCAC_MVP_Reg-3053 - User should be able to edit in her/his own profile pricture", priority = 11)
 	public static void editPicture()
 	{
@@ -1196,4 +1196,141 @@ public class Login
 		}
 
 	}
+}
+*/
+
+
+package com.ezdi.testscripts;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.ezdi.framework.common.Log4J;
+import com.ezdi.framework.driverscript.DriverTestNG;
+import com.ezdi.framework.driverscript.ExecutionSetup;
+import com.ezdi.library.Login_Lib;
+import com.ezdi.webelements.AbstractPnl_WebE;
+import com.ezdi.webelements.CodingPnl_WebE;
+import com.ezdi.webelements.Comman_WebE;
+import com.ezdi.webelements.GroupinPnl_WebE;
+import com.ezdi.webelements.IssuePnl_WebE;
+import com.ezdi.webelements.LandingP_WebE;
+import com.ezdi.webelements.ManualAllocation_WebE;
+import com.ezdi.webelements.MedicalRecordPnl_WebE;
+import com.ezdi.webelements.MessageCenter_WebE;
+import com.ezdi.webelements.SearchCriteria_WebE;
+import com.ezdi.webelements.ViewCase_WebE;
+
+public class Login {
+	
+	public static WebDriver				driver;
+	public static LandingP_WebE			landingp_webe;
+	public static Comman_WebE			common_webe;
+	public static WebDriverWait			wait;
+	public static SearchCriteria_WebE	searchcriteria_webe;
+	public static ViewCase_WebE			viewcase_webe;
+	public static CodingPnl_WebE		codingpnl_webe;
+	public static MedicalRecordPnl_WebE	medicalrecordpnl_webe;
+	public static IssuePnl_WebE			issuepnl_webe;
+	public static GroupinPnl_WebE		groupingpnl_webe;
+	public static AbstractPnl_WebE		abstractpnl_webe;
+	public static MessageCenter_WebE	messagecenter_webe;
+	public static ManualAllocation_WebE	manualallocation_webe;
+
+	@BeforeClass
+	public static void ViewCaseBeforeClass()
+	{
+		try
+		{
+			driver = ExecutionSetup.getDriver();
+			landingp_webe = LandingP_WebE.getInstance(driver);
+			common_webe = Comman_WebE.getInstance(driver);
+			wait = new WebDriverWait(driver, 20);
+			searchcriteria_webe = SearchCriteria_WebE.getInstance(driver);
+			viewcase_webe = ViewCase_WebE.getInstance(driver);
+			codingpnl_webe = CodingPnl_WebE.getInstance(driver);
+			medicalrecordpnl_webe = MedicalRecordPnl_WebE.getInstance(driver);
+			issuepnl_webe = IssuePnl_WebE.getInstance(driver);
+			groupingpnl_webe = GroupinPnl_WebE.getInstance(driver);
+			abstractpnl_webe = AbstractPnl_WebE.getInstance(driver);
+			messagecenter_webe = MessageCenter_WebE.getInstance(driver);
+			manualallocation_webe = ManualAllocation_WebE.getInstance(driver);
+
+			//Login_Lib.login("nc003");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+	
+	@Test(description = "Vefity student login",  priority = 1)
+	public static void loginAsStudent()
+	
+	{
+		boolean bstatus; 
+		String strLogin_Rowid = "bc001"  ;
+				bstatus = Login_Lib.login(strLogin_Rowid);
+		if (bstatus){
+			Log4J.logp.info("login sucessfully for row id " + strLogin_Rowid );
+		} else{
+			Log4J.logp.error("login un - sucessfully for row id " + strLogin_Rowid );
+		}
+			
+	
+	}
+	
+		
+	@AfterClass
+	public static void ViewCaseAfterClass()
+	{
+		try
+		{
+			if (driver != null)
+			{
+				driver = null;
+			}
+			if (landingp_webe != null)
+			{
+				landingp_webe = null;
+			}
+			if (wait != null)
+			{
+				wait = null;
+			}
+			if (common_webe != null)
+			{
+				common_webe = null;
+			}
+			if (searchcriteria_webe != null)
+			{
+				searchcriteria_webe = null;
+			}
+			if (codingpnl_webe != null)
+			{
+				codingpnl_webe = null;
+			}
+			if (medicalrecordpnl_webe != null)
+			{
+				medicalrecordpnl_webe = null;
+			}
+
+			Login_Lib.logOut_App();
+//			Login_Lib.logIn_App(DriverTestNG.username, DriverTestNG.password);
+
+			Log4J.logp.info("In AfterClass for ViewCase");
+
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+	
+
 }

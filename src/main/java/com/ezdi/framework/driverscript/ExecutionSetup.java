@@ -33,15 +33,7 @@ public class ExecutionSetup
 				driver.get("javascript:document.getElementById('overridelink').click();");
 				//driver.navigate().to("javascript:document.getElementById('overridelink').click();");
 			}
-			/*loginStatus = Login_Lib.logIn_App(DriverTestNG.username, DriverTestNG.password);
-			if (loginStatus)
-			{
-				Log4J.logf.info("Login Sucessfull");
-			}
-			else
-			{
-				Log4J.logf.info("Login Un--Sucessfull");
-			}*/
+	
 
 		}
 		catch (Exception e)
