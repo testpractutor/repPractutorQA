@@ -24,32 +24,33 @@ public class Login_Lib {
 	static WebDriverWait wait;
 	static LandingP_WebE landingp_webe;
 
-	public static boolean logIn_App(String userName, String passWord) {
-		try {
-
+	public static boolean logIn_App(String userName, String passWord)
+	{
+		try 
+		{
+			Log4J.logp.info("-- STARTED: logIn_App -- ");
 			driver = ExecutionSetup.getDriver();
 			login_webe = Login_WebE.getInstance(driver);
-			landingp_webe = LandingP_WebE.getInstance(driver);
-
+			
 			login_webe.btn_SignIn.click();
 			login_webe.txt_userName.sendKeys(userName);
 
 			login_webe.txt_passWord.sendKeys(passWord);
 			login_webe.btn_Go.click();
 
-			Common_Lib.waitForObject(landingp_webe.drp_username_header,"clickable", 30);
-			if (landingp_webe.drp_username_header != null) {
-				Log4J.logp.info("Login is sucessfull for Student");
+			Common_Lib.waitForObject(login_webe.drp_UsernameHeader,"clickable", 30);
+			if (login_webe.drp_UsernameHeader != null) {
+				Log4J.logp.info("COMPLETED: Login is sucessfull for Student");
 				return true;
 			} else {
-				Log4J.logp.error("Login is un - sucessfull for Student");
+				Log4J.logp.error("FAILED: Login is un - sucessfull for Student");
 				return false;
 			}
 
 		}
 
 		catch (Exception e) {
-			Log4J.logf.error("Login - unsucessful");
+			Log4J.logf.error("PROBLEM OCCURED: logIn_App");
 			return false;
 		}
 	}
@@ -61,14 +62,14 @@ public class Login_Lib {
 		Map<String, String> rowTestData = null;
 		try {
 
-			Log4J.logp.info("--------------- Started : login ----------------");
+			Log4J.logp.info("--------------- STARTED : login ----------------");
 			JDBCMySql navigationBar_TestData = new JDBCMySql();
 			rowTestData = navigationBar_TestData.getRowbyID("td_logindata",
 					rowid);
 			username = rowTestData.get("userName");
 			password = rowTestData.get("passWord");
 			bStatus = Login_Lib.logIn_App(username, password);
-			Log4J.logp.info("--------------- Ended : login ----------------");
+			Log4J.logp.info("--------------- COMPLETED : login ----------------");
 			return bStatus;
 
 		} catch (Exception e) {
@@ -77,79 +78,90 @@ public class Login_Lib {
 		}
 	}
 
-	/**
-	 * @author nchourasiya
-	 * */
-	public static boolean checkLoginSucess(String rowID, String lbl, String err) {
-		boolean bUsername;
-		boolean bStatus = false;
-		try {
-			Log4J.logp
-					.info("--------------- Started : checkLoginSucess ----------------");
+//	/**
+//	 * @author nchourasiya
+//	 * */
+//	public static boolean checkLoginSucess(String rowID, String lbl, String err) {
+//		boolean bUsername;
+//		boolean bStatus = false;
+//		try {
+//			Log4J.logp
+//					.info("--------------- Started : checkLoginSucess ----------------");
+//
+//			Login_Lib.login(rowID);
+//
+//			if (lbl == "check_login") {
+//
+//				bUsername = Common_Lib
+//						.checkElementPresent(landingp_webe.lbl_UserName);
+//				Log4J.logp.info(landingp_webe.lbl_UserName.getText()
+//						+ " Welcome to ezcac");
+//				Thread.sleep(1000);
+//				Login_Lib.logOut_App();
+//				bStatus = true;
+//			} else if (err == "checkError")
+//
+//			{
+//				bUsername = Common_Lib
+//						.checkElementPresent(login_webe.txt_ErrMsg);
+//				Log4J.logp.info(login_webe.txt_ErrMsg.getText()
+//						+ " - Validation Message");
+//				Thread.sleep(3000);
+//				driver.navigate().refresh();
+//				Thread.sleep(2000);
+//				bStatus = true;
+//			} else {
+//				Log4J.logp.info("Some thing went wrong");
+//				bStatus = false;
+//			}
+//
+//			Log4J.logp
+//					.info("-------------- Ended : checkLoginSucess----------------");
+//			return bStatus;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return false;
+//
+//		}
+//
+//	}
 
-			Login_Lib.login(rowID);
-
-			if (lbl == "check_login") {
-
-				bUsername = Common_Lib
-						.checkElementPresent(landingp_webe.lbl_UserName);
-				Log4J.logp.info(landingp_webe.lbl_UserName.getText()
-						+ " Welcome to ezcac");
-				Thread.sleep(1000);
-				Login_Lib.logOut_App();
-				bStatus = true;
-			} else if (err == "checkError")
-
-			{
-				bUsername = Common_Lib
-						.checkElementPresent(login_webe.txt_ErrMsg);
-				Log4J.logp.info(login_webe.txt_ErrMsg.getText()
-						+ " - Validation Message");
-				Thread.sleep(3000);
-				driver.navigate().refresh();
-				Thread.sleep(2000);
-				bStatus = true;
-			} else {
-				Log4J.logp.info("Some thing went wrong");
-				bStatus = false;
-			}
-
-			Log4J.logp
-					.info("-------------- Ended : checkLoginSucess----------------");
-			return bStatus;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-
-		}
-
-	}
-
-	public static boolean logOut_App() {
-		try {
+	public static boolean logOut_App() 
+	{
+		try 
+		{
+			Log4J.logp.info("STARTED: logOut_App");
 			driver = ExecutionSetup.getDriver();
 			login_webe = Login_WebE.getInstance(driver);
-
 			wait = new WebDriverWait(driver, 20);
-			Thread.sleep(2000);
-			wait.until(ExpectedConditions
-					.visibilityOf(login_webe.btn_Salutation));
+
+			/*Thread.sleep(2000);
+			wait.until(ExpectedConditions.visibilityOf(login_webe.btn_Salutation));
 			login_webe.btn_Salutation.click();
 			// Thread.sleep(2000);
 			// Common_Lib.waitForObject(login_webe.lnk_Logout, "visibility",
 			// 30);
 			login_webe.lnk_Logout.click();
 			Thread.sleep(2000);
-
 			// Assert.assertTrue((landingp_webe.lbl_UserName.getText()).toLowerCase().contains((userName.toLowerCase())));
 			wait = null;
 			Log4J.logf.info("Logout is sucessful in Login library");
-			return true;
-
-			// landingp_webe.imgAdmin_Setting.isDisplayed();
-
-		} catch (Exception e) {
-			Log4J.logf.error("Logout is unsucessful");
+			// landingp_webe.imgAdmin_Setting.isDisplayed();*/			
+			login_webe.drp_UsernameHeader.click();
+			login_webe.lnk_SignoutHeader.click();
+			Common_Lib.waitForObject(login_webe.btn_SignIn,"visibility", 30);
+			
+			if (login_webe.btn_SignIn != null) {
+				Log4J.logp.info("COMPLETED: Logout is sucessfull for Student");
+				return true;
+			} else {
+				Log4J.logp.error("FAILED: Logout is un - sucessfull for Student");
+				return false;
+			}
+		} 
+		catch (Exception e) 
+		{
+			Log4J.logf.error("PROBLEM OCCURED: logOut_App");
 			e.printStackTrace();
 			return false;
 

@@ -9,10 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LandingP_WebE
 {
-	/** username drop down in header */
-	@FindBy(xpath = "//*[@id='header']/div[1]/div/div[4]")
-	public WebElement	drp_username_header;
-
 	/** to click on admin setting image on landing page */
 	@FindBy(id = "adminHeaderLink")
 	public WebElement		imgAdmin_Setting;

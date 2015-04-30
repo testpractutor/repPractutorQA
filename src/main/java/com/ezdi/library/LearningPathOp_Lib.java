@@ -37,7 +37,7 @@ public class LearningPathOp_Lib {
 	{		
 		try
 		{
-			Log4J.logp.info("----------------- Started :: buyCityElement_App------------------");
+			Log4J.logp.info("-- STARTED: buyCityElement_App -- ");
 			driver = ExecutionSetup.getDriver();
 			praccityelements_webe = PracCityElements_WebE.getInstance(driver);
 			
@@ -58,19 +58,18 @@ public class LearningPathOp_Lib {
 			Common_Lib.waitForObject(praccityelements_webe.msg_ConfirmMsgforBuyCityElement, "visibility", 30);
 						
 			if (praccityelements_webe.msg_ConfirmMsgforBuyCityElement != null) {
-				Log4J.logp.info("Buying City Element sucessfull for Student");
+				Log4J.logp.info("COMPLETED: Buying City Element sucessfull for Student");
 				
 				return true;
 			} else {
-				Log4J.logp.error("Buying City Element UN-sucessfull for Student");
+				Log4J.logp.error("FAILED: Buying City Element UN-sucessfull for Student");
 				return false;
 			}			
-			
-			
+						
 		}
 		catch(Exception e)
 		{
-			Log4J.logp.error("Problrm found in ::buyCityElement_App");
+			Log4J.logp.error("PROBLEM OCCURED: buyCityElement_App");
 			e.printStackTrace();
 			return false;
 		}

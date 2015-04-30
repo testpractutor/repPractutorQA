@@ -7,16 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Login_WebE
 {
-
+	/** Sign in button on Static page */
 	@FindBy(id = "btnSignIn")
 	public WebElement	btn_SignIn;
 	
+	/** Textbox to enter username */
 	@FindBy(id = "userName2")
 	public WebElement	txt_userName;
 
+	/** Textbox to enter Password */
 	@FindBy(id = "password2")
 	public WebElement	txt_passWord;
 
+	/** Go Button for sign in */
 	@FindBy(id = "loginButton")
 	public WebElement	btn_Go;
 
@@ -61,6 +64,15 @@ public class Login_WebE
 	public WebElement	lnk_ForgotCancel;
 
 	/************************************************ Profile Page *****************************************/
+	
+	/** User-name drop down in header */
+	@FindBy(xpath = "//*[@id='header']/div[1]/div/div[4]")
+	public WebElement	drp_UsernameHeader;
+	
+	/** Sign out link in header */
+	@FindBy(xpath = "//*[@id='headercontextmenu']/li[2]/a")
+	public WebElement	lnk_SignoutHeader;
+		
 	/** To Click on Edit Button in Profile Page */
 	@FindBy(id = "edit")
 	public WebElement	btn_Edit;

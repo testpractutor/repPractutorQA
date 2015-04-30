@@ -66,6 +66,7 @@ public class LearningPathOperations {
 	{
 		try
 		{
+			Login_Lib.logOut_App();
 			driver = null;
 			common_webe = null;
 		}

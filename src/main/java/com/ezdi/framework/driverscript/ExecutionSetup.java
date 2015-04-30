@@ -52,9 +52,9 @@ public class ExecutionSetup
 		{
 			Thread.sleep(5000);
 			Log4J.logf.info("------------------------------->In AfterSuite");
-			//driver.close();
-			//driver.quit();
 			//Login_Lib.logOut_App();
+			driver.close();
+			driver.quit();
 			// testing commit
 			DriverTestNG.selectedConfig.connectionClose();
 		}
