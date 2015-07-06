@@ -62,6 +62,20 @@ public class Common_Lib
 	public static CodeBook_WebeE		codeBook_webe;
 	public static MedicalRecordPnl_WebE	medicalrecordpnl_webe;
 
+
+	/**
+	 * This method is for scroll browser downwards to reach 'element'
+	 * 
+	 * @author bchauhan
+	 * */
+	
+	public static Object scrollBrowsertoElementView(WebDriver driver, WebElement element) 
+	{
+		Log4J.logp.info("----------------  Started - scroll_Page ----------------");
+	    return ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	    
+	}
+
 	/**
 	 * This method is for scroll page downwards with dragger element
 	 * 

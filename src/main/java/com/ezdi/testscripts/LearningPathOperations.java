@@ -56,10 +56,27 @@ public class LearningPathOperations {
 		} 
 		else
 		{
-			Log4J.logp.error("Buying City Element UN-sucessfully -From TestScript" );
+			Log4J.logp.error("Buying City Element UN-sucessfull -From TestScript" );
 			Assert.assertTrue(bstatus, "Buying City Element Un-sucessfull -From TestScript " );
 		}
 	}
+	
+//	@Test(description = "Vefity Add class Details:TEACHER",  priority = 1)
+//	public static void addClassDeatils()
+//	{
+//		boolean bstatus;
+//		bstatus = LearningPathOp_Lib.addClassDeatils_App();
+//		if (bstatus)
+//		{
+//			Log4J.logp.info("Vefity Add class Details sucessfull -From TestScript "  );			
+//			Assert.assertTrue(bstatus, "Vefity Add class Details sucessfull -From TestScript " );
+//		} 
+//		else
+//		{
+//			Log4J.logp.error("Vefity Add class Details UN-sucessfull -From TestScript" );
+//			Assert.assertTrue(bstatus, "Vefity Add class Details Un-sucessfull -From TestScript " );
+//		}
+//	}
 			
 	@AfterClass
 	public static void ViewCaseAfterClass()

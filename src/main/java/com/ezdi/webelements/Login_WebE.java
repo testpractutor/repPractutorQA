@@ -70,9 +70,19 @@ public class Login_WebE
 	public WebElement	drp_UsernameHeader;
 	
 	/** Sign out link in header */
-	@FindBy(xpath = "//*[@id='headercontextmenu']/li[2]/a")
+	@FindBy(linkText= "Sign out")
 	public WebElement	lnk_SignoutHeader;
-		
+	
+	
+//	/** Fotter division in Footer area */
+//	@FindBy(id = "footer")
+//	public WebElement	div_Footer;
+	
+	
+//	/** Sign out link in header for Parent Or Teacher*/
+//	@FindBy(xpath = "//*[@id='headercontextmenu']/li[4]/a")
+//	public WebElement	lnk_SignoutHeaderForParentOrTeaacher;
+				
 	/** To Click on Edit Button in Profile Page */
 	@FindBy(id = "edit")
 	public WebElement	btn_Edit;

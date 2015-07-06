@@ -24,6 +24,8 @@ public class Login_Lib {
 	static WebDriverWait wait;
 	static LandingP_WebE landingp_webe;
 
+	
+	
 	public static boolean logIn_App(String userName, String passWord)
 	{
 		try 
@@ -39,6 +41,7 @@ public class Login_Lib {
 			login_webe.btn_Go.click();
 
 			Common_Lib.waitForObject(login_webe.drp_UsernameHeader,"clickable", 30);
+			
 			if (login_webe.drp_UsernameHeader != null) {
 				Log4J.logp.info("COMPLETED: Login is sucessfull for Student");
 				return true;
@@ -125,7 +128,9 @@ public class Login_Lib {
 //		}
 //
 //	}
-
+	
+	
+	// lOGOUT FROM STUDENT LOGIN
 	public static boolean logOut_App() 
 	{
 		try 
@@ -133,23 +138,12 @@ public class Login_Lib {
 			Log4J.logp.info("STARTED: logOut_App");
 			driver = ExecutionSetup.getDriver();
 			login_webe = Login_WebE.getInstance(driver);
-			wait = new WebDriverWait(driver, 20);
+			wait = new WebDriverWait(driver, 30);
 
-			/*Thread.sleep(2000);
-			wait.until(ExpectedConditions.visibilityOf(login_webe.btn_Salutation));
-			login_webe.btn_Salutation.click();
-			// Thread.sleep(2000);
-			// Common_Lib.waitForObject(login_webe.lnk_Logout, "visibility",
-			// 30);
-			login_webe.lnk_Logout.click();
-			Thread.sleep(2000);
-			// Assert.assertTrue((landingp_webe.lbl_UserName.getText()).toLowerCase().contains((userName.toLowerCase())));
-			wait = null;
-			Log4J.logf.info("Logout is sucessful in Login library");
-			// landingp_webe.imgAdmin_Setting.isDisplayed();*/			
+			Common_Lib.waitForObject(login_webe.drp_UsernameHeader,"clickable", 30);
 			login_webe.drp_UsernameHeader.click();
 			login_webe.lnk_SignoutHeader.click();
-			Common_Lib.waitForObject(login_webe.btn_SignIn,"visibility", 30);
+			Common_Lib.waitForObject(login_webe.btn_SignIn,"clickable", 30);
 			
 			if (login_webe.btn_SignIn != null) {
 				Log4J.logp.info("COMPLETED: Logout is sucessfull for Student");
@@ -168,7 +162,10 @@ public class Login_Lib {
 		}
 
 	}
+	
 
+
+	
 	/**
 	 * @author nchourasiya
 	 * 
